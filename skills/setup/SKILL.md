@@ -14,7 +14,7 @@ Shipster coordinates coding agents across the user's repos. There are two halves
    - "Can create and start goals" allows the goal tools.
    - "Can message agents" allows answering a blocked task and asking an agent a question.
    With neither ticked, the token only reads.
-3. They paste the token when this plugin asks for it.
+3. They run `/plugin configure shipster@shipster` in Claude Code and paste the token at the prompt. The connector stays off until a token is set.
 
 A token expires (the user picks 7, 30 or 90 days) and can be revoked from the same page. Never ask the user to paste a token into the chat.
 

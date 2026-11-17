@@ -14,7 +14,13 @@ claude plugin marketplace add phillipsio/shipster-plugin
 claude plugin install shipster@shipster
 ```
 
-Claude asks for a connector token when you enable the plugin. Create one at https://shipster.dev under Settings > Claude connector. It starts with `ast_`, is shown once, and expires after the period you pick.
+Then give it a connector token. In a Claude Code session, run:
+
+```text
+/plugin configure shipster@shipster
+```
+
+Paste the token at the prompt. Create one at https://shipster.dev under Settings > Claude connector. It starts with `ast_`, is shown once, and expires after the period you pick. The connector stays off until a token is set.
 
 ## What the token can do
 
