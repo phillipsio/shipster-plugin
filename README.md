@@ -49,7 +49,7 @@ The connector calls `https://mcp.shipster.dev/mcp` with your token. It reads you
 
 Privacy policy: https://shipster.dev/privacy
 
-TODO before publishing: support contact.
+Questions and problems: support@shipster.dev
 
 ## License
 
