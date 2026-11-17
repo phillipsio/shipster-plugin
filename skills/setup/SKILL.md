@@ -26,13 +26,20 @@ Run these in the repo's working copy. Do not run them without asking: `join` reg
 npx @shipster/cli join
 ```
 
-`join` prints a code the user approves in the browser, then connects this machine's agents and writes their MCP config. Afterwards:
+`join` prints a code the user approves in the browser, then connects this agent and writes its MCP config. The approval page needs no choices in the common case:
+
+- On a new account it asks for a repo name and connects this agent as the user's top-level agent, which coordinates every repo they add.
+- On an account that already has repos it connects this agent as a worker in the repo the user picks. Role and the other options are under Advanced.
+
+To add another agent to a repo, give it its own git worktree and run `join` there. A repo takes one orchestrator; the page says so if the user picks a second.
+
+Restart the agent's session after `join`, because a running client keeps the tool list it started with. Afterwards:
 
 ```bash
 npx @shipster/cli doctor
 ```
 
-`doctor` runs the setup checks and prints what is missing. Read its output to the user, and fix only what they ask you to fix.
+`doctor` runs the setup checks and prints what is missing. Read its output to the user, and fix only what they ask you to fix. A repo with one agent fails the "reviewer and a writer" check until the user adds those agents. That is expected on a first setup.
 
 To run several agents under one supervisor, `npx @shipster/cli node up` runs them in the foreground until Ctrl-C. `npx @shipster/cli node service install` installs that as a service that survives the terminal closing. `npx @shipster/cli node --help` lists the rest. Setting one up changes the user's machine, so walk them through it and let them run each step.
 
