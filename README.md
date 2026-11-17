@@ -47,4 +47,8 @@ The connector calls `https://mcp.shipster.dev/mcp` with your token. It reads you
 
 ## Support
 
-TODO before publishing: support contact, privacy policy link, license.
+TODO before publishing: support contact and privacy policy link.
+
+## License
+
+MIT. It covers this plugin: the manifest, the connector configuration and the skills. The Shipster service and its server software are separate and are not licensed by this file.

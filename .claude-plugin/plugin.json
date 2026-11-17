@@ -2,9 +2,17 @@
   "name": "shipster",
   "description": "Run a fleet of coding agents from Claude: see what needs you, file a goal, hear the plan, start the build, and unblock an agent that is waiting on you.",
   "version": "0.1.0",
-  "author": { "name": "Shipster" },
+  "author": {
+    "name": "Shipster"
+  },
+  "license": "MIT",
   "homepage": "https://shipster.dev",
-  "keywords": ["agents", "orchestration", "tasks", "mcp"],
+  "keywords": [
+    "agents",
+    "orchestration",
+    "tasks",
+    "mcp"
+  ],
   "userConfig": {
     "api_token": {
       "type": "string",

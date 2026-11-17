@@ -1,6 +1,9 @@
 {
   "name": "shipster",
-  "owner": { "name": "Shipster" },
+  "description": "The Shipster plugin for Claude: the Shipster connector and the skills to use it.",
+  "owner": {
+    "name": "Shipster"
+  },
   "plugins": [
     {
       "name": "shipster",
