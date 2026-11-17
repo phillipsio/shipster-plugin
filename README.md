@@ -7,7 +7,7 @@ This plugin adds the Shipster connector and four skills that teach Claude how to
 ## Install
 
 ```bash
-claude plugin marketplace add OWNER/shipster-plugin
+claude plugin marketplace add phillipsio/shipster-plugin
 ```
 
 ```bash
