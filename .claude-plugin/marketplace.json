@@ -1,0 +1,11 @@
+{
+  "name": "shipster",
+  "owner": { "name": "Shipster" },
+  "plugins": [
+    {
+      "name": "shipster",
+      "source": "./",
+      "description": "Run a fleet of coding agents from Claude: see what needs you, file a goal, hear the plan, start the build, and unblock an agent that is waiting on you."
+    }
+  ]
+}
