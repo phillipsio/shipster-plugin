@@ -5,7 +5,7 @@ description: Report on the user's Shipster agents and work. Use when the user as
 
 # Check in on Shipster
 
-Shipster runs the user's coding agents. The `shipster` connector reads their state. Every tool here only reads.
+Shipster runs the user's coding agents. The tools named here belong to the `shipster` connector this plugin adds; your tool list may show them with a longer prefixed name ending in the name given here. Every tool in this skill only reads.
 
 ## Which tool answers which question
 

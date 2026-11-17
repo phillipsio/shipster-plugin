@@ -23,7 +23,7 @@ A token only reads unless you tick a box when you create it.
 | Box | What it adds |
 |---|---|
 | none | See what needs you, your pools and agents, recent work, a task's thread, a goal's plan |
-| Can create and start goals | File a goal and start it. A goal filed this way is planned but not built until you start it |
+| Can create and start goals | File a goal and start it. A goal filed this way is planned but not built until you start it, which hands the plan to your repo's orchestrator |
 | Can message agents | Answer a task that is blocked waiting on you, and ask the agent on a task a question |
 
 No token can approve a review gate, merge, or change settings. Revoke a token from the same dashboard page.
@@ -43,7 +43,7 @@ Claude Code (terminal, desktop app and IDE extensions) asks for the token and co
 
 ## What it sends
 
-The connector calls `https://mcp.shipster.dev/mcp` with your token. It reads your Shipster tasks, goals, repos, pools and agent status, and, if you ticked the boxes, files goals and sends your answers and questions to your agents. It sends nothing else from your machine or your conversation.
+The connector calls `https://mcp.shipster.dev/mcp` with your token. It reads your Shipster tasks, goals, repos, pools and agent status, and, if you ticked the boxes, files goals and sends your answers and questions to your agents. The goal text, answers and questions are the ones you gave Claude to send. It sends nothing else from your machine or your conversation.
 
 ## Support
 

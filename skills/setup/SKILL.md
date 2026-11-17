@@ -34,16 +34,19 @@ npx @shipster/cli doctor
 
 `doctor` runs the setup checks and prints what is missing. Read its output to the user, and fix only what they ask you to fix.
 
-To keep agents running without a terminal open, `shipster node` runs them as a supervised service. `shipster node --help` lists its commands. Setting one up changes the user's machine, so walk them through it and let them run each step.
+To run several agents under one supervisor, `npx @shipster/cli node up` runs them in the foreground until Ctrl-C. `npx @shipster/cli node service install` installs that as a service that survives the terminal closing. `npx @shipster/cli node --help` lists the rest. Setting one up changes the user's machine, so walk them through it and let them run each step.
 
 ## When a tool fails
 
+A refusal comes back as a line starting "Error:" followed by a sentence. There is no code or status number to match, so read the sentence.
+
 | What you see | What it means | What to tell the user |
 |---|---|---|
-| 401 | The token is wrong, expired or revoked | Create a new token and update the plugin's setting |
-| 403 on a goal or message tool | The token lacks that capability | Create a new token with the box ticked |
-| 429 | Too many requests at once, or a daily cap | Wait, then try again |
+| The Shipster tools are missing, or the connector will not connect | The token is wrong, expired or revoked | Create a new token and update the plugin's setting |
+| "An assistant token can only read" | The token lacks the box for that tool | Create a new token with the box ticked |
+| "reached its cap of ... goals" or "... messages in 24 hours" | The token's daily allowance is used up | Wait until tomorrow |
+| "Too many requests in flight" | More than four calls at once | Call one tool at a time |
 | Every pool reads "health unknown" | No machine is reporting | Start the node or agent on their machine |
 | "Nothing needs you right now" | Not an error | Nothing is waiting |
 
-Do not retry a 401 or 403. It will not change until the token does.
+Do not retry a refusal about the token or a cap. It will not change until the token or the day does.
