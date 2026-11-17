@@ -47,7 +47,9 @@ The connector calls `https://mcp.shipster.dev/mcp` with your token. It reads you
 
 ## Support
 
-TODO before publishing: support contact and privacy policy link.
+Privacy policy: https://shipster.dev/privacy
+
+TODO before publishing: support contact.
 
 ## License
 

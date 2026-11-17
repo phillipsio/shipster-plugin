@@ -8,6 +8,7 @@
   "license": "MIT",
   "homepage": "https://shipster.dev",
   "repository": "https://github.com/phillipsio/shipster-plugin",
+  "privacyPolicyUrl": "https://shipster.dev/privacy",
   "keywords": [
     "agents",
     "orchestration",
