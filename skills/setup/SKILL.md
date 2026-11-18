@@ -41,7 +41,15 @@ The approval page needs no choices in the common case:
 
 To add another agent to a repo, give it its own git worktree and run `join` there. A second agent with the same name is numbered, so two Claude Code agents become `claude` and `claude-2`. A repo takes one orchestrator; the page says so if the user picks a second.
 
-A new account's top-level agent gets a short setup list from its first `session_start` call (connect a repo, add a writer and a reviewer, file a first goal). Walk the user through it in order.
+A new account's top-level agent gets a short setup list from its first `session_start` call (connect a repo, add a planner, a writer and a reviewer, file a first goal). Walk the user through it in order.
+
+A goal is not worked on until three more agents are running: a planner, a writer and a reviewer. The top-level agent cannot be any of them and cannot add a planner or a reviewer itself. A planner is an agent that joins with Role set to Orchestrator under Advanced, or an architect at tier 2. The shortest way to get all three is one command, which asks for one approval and then prints a `node up` command that keeps them running:
+
+```bash
+npx @shipster/cli onboard <github-url>
+```
+
+Each of those agents runs a model CLI on that machine, so the CLI must be logged in there. If `fleet_status` says agents cannot log in, the user logs in on that machine (for Claude Code: `claude`, then `/login`).
 
 Restart the agent's session after `join`, because a running client keeps the tool list it started with. Afterwards:
 
