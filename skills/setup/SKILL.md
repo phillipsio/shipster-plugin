@@ -26,12 +26,22 @@ Run these in the repo's working copy. Do not run them without asking: `join` reg
 npx @shipster/cli join
 ```
 
-`join` prints a code the user approves in the browser, then connects this agent and writes its MCP config. The approval page needs no choices in the common case:
+`join` prints a code the user approves in the browser, then connects this agent and writes its MCP config. It detects Claude Code and Cursor. For any other agent, name it:
+
+```bash
+npx @shipster/cli join --agent gemini
+```
+
+The names are `claude`, `cursor`, `gemini`, `copilot`, `windsurf`, `gpt` and `mcp`. Use `mcp` for a client not on that list: `join` then prints a server command to add to that client by hand, with no secrets in it.
+
+The approval page needs no choices in the common case:
 
 - On a new account it asks for a repo name and connects this agent as the user's top-level agent, which coordinates every repo they add.
 - On an account that already has repos it connects this agent as a worker in the repo the user picks. Role and the other options are under Advanced.
 
-To add another agent to a repo, give it its own git worktree and run `join` there. A repo takes one orchestrator; the page says so if the user picks a second.
+To add another agent to a repo, give it its own git worktree and run `join` there. A second agent with the same name is numbered, so two Claude Code agents become `claude` and `claude-2`. A repo takes one orchestrator; the page says so if the user picks a second.
+
+A new account's top-level agent gets a short setup list from its first `session_start` call (connect a repo, add a writer and a reviewer, file a first goal). Walk the user through it in order.
 
 Restart the agent's session after `join`, because a running client keeps the tool list it started with. Afterwards:
 
