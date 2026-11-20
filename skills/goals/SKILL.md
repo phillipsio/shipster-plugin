@@ -7,7 +7,7 @@ description: File a new goal for the user's Shipster agents, read back the plan,
 
 A goal is a piece of work for the user's agents: a feature, a fix, a change. A planner agent breaks it into tasks. Nothing is built until the user says to start.
 
-The tools named here belong to the `shipster` connector this plugin adds; your tool list may show them with a longer prefixed name ending in the name given here.
+The tools named here belong to the `shipster` server, the connector this plugin adds; your tool list may show them with a longer prefixed name ending in the name given here.
 
 These tools need a connector token created with "Can create and start goals" ticked. Without it the tool answers "Error: An assistant token can only read". Do not retry: tell the user to create a new token in the Shipster dashboard under Settings > Claude connector.
 

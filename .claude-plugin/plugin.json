@@ -1,7 +1,7 @@
 {
   "name": "shipster",
-  "description": "Run a fleet of coding agents from Claude: see what needs you, file a goal, hear the plan, start the build, and unblock an agent that is waiting on you.",
-  "version": "0.1.0",
+  "description": "Run a fleet of coding agents from Claude: connect a repo, get a team, file a goal, hear the plan, start the build, and unblock an agent that is waiting on you.",
+  "version": "0.2.0",
   "author": {
     "name": "Shipster"
   },
@@ -19,7 +19,7 @@
     "api_token": {
       "type": "string",
       "title": "Shipster connector token",
-      "description": "Create one in the Shipster dashboard under Settings > Claude connector. It starts with ast_. Tick \"Can create and start goals\" and \"Can message agents\" there if you want Claude to do those things; without them the token only reads.",
+      "description": "Only the connector needs this; connecting a repo does not. Create one in the Shipster dashboard under Settings > Claude connector. It starts with ast_. Tick \"Can create and start goals\" and \"Can message agents\" there if you want Claude to do those things; without them the token only reads.",
       "required": true,
       "sensitive": true
     }

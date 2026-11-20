@@ -7,7 +7,7 @@ description: Unblock a Shipster agent that is waiting on the user, or ask the ag
 
 An agent that needs a decision blocks its task and waits. The user's answer resumes it.
 
-The tools named here belong to the `shipster` connector this plugin adds; your tool list may show them with a longer prefixed name ending in the name given here.
+The tools named here belong to the `shipster` server, the connector this plugin adds; your tool list may show them with a longer prefixed name ending in the name given here.
 
 These tools need a connector token created with "Can message agents" ticked. Without it the server refuses, and you should tell the user to create a new token in the Shipster dashboard under Settings > Claude connector.
 

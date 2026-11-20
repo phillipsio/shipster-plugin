@@ -3,7 +3,17 @@
     "shipster": {
       "type": "http",
       "url": "https://mcp.shipster.dev/mcp",
-      "headers": { "x-api-key": "${user_config.api_token}" }
+      "headers": {
+        "x-api-key": "${user_config.api_token}"
+      }
+    },
+    "repo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@shipster/cli@latest",
+        "mcp"
+      ]
     }
   }
 }
